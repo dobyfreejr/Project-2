@@ -324,65 +324,78 @@ Upon browsing to that system we found, using the username and password discovere
 **Flag 3**
 :When we found the internal web server we also noted that the system was running an ftp server.  When testing access to that server we found the default “anonymous” user name and password was still active and had full access to the data contained on the server.
 
-![]()
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/41.png)
 
 Upon searching the data contained we quickly found a file that contained the flag data we needed, and after moving it to our local system were able to view the data and retrieve the flag.
 
-![]()
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/42.png)
 
 **Flag 4**
 :From our initial scan we additionally found that the system that contained the last two flags was also hosting a mail server.  Upon doing some searching we found that the version of SLMail was exploitable due to a well known vulnerability.
 
-![]()
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/43.png)
 
 Upon setting the options for the exploit and running it we were able to drop to a shell and found a file containing our flag which we were able to retrieve using simple windows command line tools.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/44.png)
 
 **Flag 5**
 :Now that we had gained access to the Windows 10 system we started to do initial recon to find other ways to maintain a foothold in the network.  We started this process by creating a payload that would “call home” to our system and allow us to maintain a connection.
 
-
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/45.png)
 
 Once the payload was generated we uploaded it to the Windows 10 system
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/46.png)
+
 In order to keep the payload up and running we needed to schedule a task to run it regularly.  Upon looking through the currently scheduled tasks we found a task named “flag 5” and found the flag under the comment.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/47.png)
 
 **Flag 6**
 :Using a module in Metasploit called kiwi, we were able to query the system and found a list of credentials.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/49.png)
 
 Upon retrieving these credentials we pulled them to the local system and again, using John-the-Ripper, we were able to discover the user accounts password. 
+
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/50.png)
 
 **Flag 7**
 :While still working with the Windows 10 system we had previously gained access to, we continued to look at the file and folders on the system and found that there was a flag contained in the Public profile in the Documents folder and using a built-in command we were able to view the data contained within.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/51.png)
 
 **Flag 8**
 :While doing recon on the Windows 10 system we found that there was a domain admin account cached in the system and were able to retrieve the password hash from that account.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/52.png)
 
 Again, using john-the-ripper, we were able to take that hash and retrieve the password for this account giving us a way to access additional systems with escalated privileges on the network.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/53.png)
 
 With this new account information we decided it was a good time to try and move laterally within the network to try and gain access to additional systems.  The target we decided to pursue was the network domain controller.  We found a tool that allowed us to point to this new system and then move our currently active session to the new system maintaining our access.
 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/54.png)
+
 Upon setting up the tool and running it we were given a new session to work with.
 
-
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/55.png)
 
 And upon activating that session we were able to open a shell on the domain controller and with a simple command were able to find the local user accounts that were set up on the system and found the flag there as well. 
 
-Flag 10
-Now that we noticed that there was an Administrator account active we wanted to see if we could access this account's password.  Using the kiwi module we were able to run a domain controller tool that allowed us to retrieve a cached password hash for the account.  With enough time we could crack this hash and have the account's password and the “keys to the kingdom”. 
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/56.png)
 
+**Flag 10**
+:Now that we noticed that there was an Administrator account active we wanted to see if we could access this account's password.  Using the kiwi module we were able to run a domain controller tool that allowed us to retrieve a cached password hash for the account.  With enough time we could crack this hash and have the account's password and the “keys to the kingdom”. 
 
-Flag 9
-With some additional recon upon the domain controller we found an additional flag on the root of the filesystem.
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/57.png)
 
+**Flag 9**
+:With some additional recon upon the domain controller we found an additional flag on the root of the filesystem.
 
-
-
+![](https://github.com/dobyfreejr/Project-2/blob/9ecd6d195f6b455cb6a466304c5f992a05a95f3d/img/58.png)
 
 
 Summary Vulnerability Overview
