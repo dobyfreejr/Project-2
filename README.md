@@ -154,6 +154,7 @@ Flag 8
 To discover flag 8 we went to the login page and found that we could add /html to the end of the url and from there it was discovered that the administrator login was included on the page in clear text.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/4.png)
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/5.png)
 
 Using this information we logged into the Administrator login and retrieved the flag.
 
