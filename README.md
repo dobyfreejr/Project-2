@@ -131,16 +131,19 @@ We successfully found several critical vulnerabilities that should be immediatel
 
 
 
-Executive Summary
+# **Executive Summary**
 
 Web Vulnerabilities
 
 Flag 1
 This flag was found by entering <script>alert(1)</script> in the name entry box on the welcome page. This page is vulnerable to cross site scripting allowing a user the ability to enter their own scripts or commands into the field and have them run against the server potentially allowing access to additional data or even compromising the integrity of future entries.
 
+![]()
 
 Flag 3
 This flag was similar to flag 1 and we found it by entering the same <script>alert(1)</script> into the comment field.  Again leaving entry boxes with no filtering for format or keywords leaves a site susceptible to injections of this kind that can compromise not just the site but other users personal data.
+
+![]()
 
 Flag 5
 To find flag 5 it was discovered that there was a filter on the entry box, located on the “Memory Planner” page, but it only looked to find the jpg extension somewhere within the name.  Modifying the payload’s extension to include jpg and an additional extension allowed us to upload a payload to the server and receive flag 5.
