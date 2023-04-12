@@ -140,200 +140,206 @@ We successfully found several critical vulnerabilities that should be immediatel
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/1.png)
 
-Flag 3
-This flag was similar to flag 1 and we found it by entering the same <script>alert(1)</script> into the comment field.  Again leaving entry boxes with no filtering for format or keywords leaves a site susceptible to injections of this kind that can compromise not just the site but other users personal data.
+**Flag 3**
+:This flag was similar to flag 1 and we found it by entering the same <script>alert(1)</script> into the comment field.  Again leaving entry boxes with no filtering for format or keywords leaves a site susceptible to injections of this kind that can compromise not just the site but other users personal data.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/2.png)
 
-Flag 5
-To find flag 5 it was discovered that there was a filter on the entry box, located on the “Memory Planner” page, but it only looked to find the jpg extension somewhere within the name.  Modifying the payload’s extension to include jpg and an additional extension allowed us to upload a payload to the server and receive flag 5.
+**Flag 5**
+:To find flag 5 it was discovered that there was a filter on the entry box, located on the “Memory Planner” page, but it only looked to find the jpg extension somewhere within the name.  Modifying the payload’s extension to include jpg and an additional extension allowed us to upload a payload to the server and receive flag 5.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/3.png)
 
-Flag 8
-To discover flag 8 we went to the login page and found that we could add /html to the end of the url and from there it was discovered that the administrator login was included on the page in clear text.
+**Flag 8**
+:To discover flag 8 we went to the login page and found that we could add /html to the end of the url and from there it was discovered that the administrator login was included on the page in clear text.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/4.png)
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/5.png)
 
 Using this information we logged into the Administrator login and retrieved the flag.
 
-Flag 9
-We checked the robots.txt file, used for websearch details, and found that the flag had been entered into the file.  This information is public so don’t put things you want hidden there.
+**Flag 9**
+:We checked the robots.txt file, used for websearch details, and found that the flag had been entered into the file.  This information is public so don’t put things you want hidden there.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/6.png)
 
-Flag 10
-When discovering flag 8 we found a link to /networking.php.  On this page we found a box that used nslookup to return data about domain names and ip addresses.  Upon entering a site we discovered flag 10.
+**Flag 10**
+:When discovering flag 8 we found a link to /networking.php.  On this page we found a box that used nslookup to return data about domain names and ip addresses.  Upon entering a site we discovered flag 10.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/7.png)
 
 
-Flag 6
-To discover this flag we used a similar technique to what was done in flag 5.  The difference here is the filtering which, instead of just needing .jpg somewhere in the name, needed to have .jpg at the end of the file name.  We created this payload, uploaded it and received flag 6.
+**Flag 6**
+:To discover this flag we used a similar technique to what was done in flag 5.  The difference here is the filtering which, instead of just needing .jpg somewhere in the name, needed to have .jpg at the end of the file name.  We created this payload, uploaded it and received flag 6.
 
-![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/7.png)
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/8.png)
 
-Flag 11
-Similar to flag 10 this flag was found using the tools found on the networking.php page but using the MX Record Checker entry box.  Entering a website url into the entry box and once the button is pressed the flag is returned.
+**Flag 11**
+:Similar to flag 10 this flag was found using the tools found on the networking.php page but using the MX Record Checker entry box.  Entering a website url into the entry box and once the button is pressed the flag is returned.
 
-Flag 4
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/9.png)
+
+**Flag 4**
 After just a little testing, on the entry boxes on the /networking.php page, we found that the entry boxes on this page allowed us to perform basic Linux terminal commands. This gave us a full view of the files and folders on the server, allowing us to conduct an immense amount of reconnaissance on the system. We took this information and were able to find that there was a .backup2 file for the About-Rekall page.
+
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/10.png)
 
 Due to some weaknesses in the design of the webpage, which allowed us to open the php files directly rather than it being a fixed page, we were able to load the backup page from the “About Rekall” page, to discover flag 4.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/11.png)
 
-
-
-Flag 7
+**Flag 7**
 This flag was discovered by using SQL injection on the login page.  Entering ' OR 1 -- - into the login entry box allows us to use an “OR” statement to query the database using an always false statement, which kicks back flag 7.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/12.png)
 
-Flag 15
-To discover this flag we first started with doing some recon using the admin networking tools page in the “DNS Check” entry box which allows command entry.  We found a folder containing an old disclaimer text file.
+**Flag 15**
+:To discover this flag we first started with doing some recon using the admin networking tools page in the “DNS Check” entry box which allows command entry.  We found a folder containing an old disclaimer text file.
 
-
-
-
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/13.png)
 
 After finding this file we used the weakness found under the “About Rekall” page to view the data contained in the text file we found using directory transversal to move to the folder that it was contained in and found the flag.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/14.png)
 
-Flag 13
+**Flag 13**
 An additional page was found at /souvenirs.php where it was discovered we could pass additional commands to the page in the url bar.  Once this was discovered we found we could add a second command that performed a “whoami” lookup and returned the flag.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/15.png)
 
+## **Linux Vulnerabilities** 
 
+**Flag 1**
+:To discover this flag we ran the domain name for the company through an online DNS lookup tool and discovered flag 1 under the “Contact Information” mailing address.
 
-Linux Vulnerabilities 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/16.png)
 
-Flag 1
-To discover this flag we ran the domain name for the company through an online DNS lookup tool and discovered flag 1 under the “Contact Information” mailing address.
+**Flag 2**
+:To further our testing we needed an IP address to use as a vector to attempt to enter the network.  Using additional online tools we were able to retrieve the IP address using reverse lookup and found it.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/17.png)
 
-Flag 2
-To further our testing we needed an IP address to use as a vector to attempt to enter the network.  Using additional online tools we were able to retrieve the IP address using reverse lookup and found it.
+**Flag 3**
+:To find even more vectors and to attempt to find weaknesses in order to gain access to the network we continued our searching finding that the site was using an RSA SSL certificate.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/18.png)
 
+**Flag 4**
+:Once access to the network was established we found flag 4 by running a simple network scan and found 5 individual hosts on the network.
 
-Flag 3
-To find even more vectors and to attempt to find weaknesses in order to gain access to the network we continued our searching finding that the site was using an RSA SSL certificate.
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/19.png)
 
+**Flag 5**
+:After finding the initial hosts on the network we decided to do an aggressive scan of the network hosts to see if they contained any ports or software that could be exploited.  We discovered the IP address of a system running a program called Drupal, that we wanted to check to see if the version was one that was easy to attack.
 
-Flag 4
-Once access to the network was established we found flag 4 by running a simple network scan and found 5 individual hosts on the network.
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/20.png)
 
+**Flag 6**
+:Using an open source tool called Nessus against the previously found system we found that the version of the software was indeed vulnerable to an attack as we found a critical vulnerability.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/21.png)
 
-Flag 5
-After finding the initial hosts on the network we decided to do an aggressive scan of the network hosts to see if they contained any ports or software that could be exploited.  We discovered the IP address of a system running a program called Drupal, that we wanted to check to see if the version was one that was easy to attack.
+**Flag 7**
+:We continued looking at additional hosts on the network for vulnerabilities and found that the particular version of apache tomcat looked to be out of date.
 
-
-Flag 6
-Using an open source tool called Nessus against the previously found system we found that the version of the software was indeed vulnerable to an attack as we found a critical vulnerability.
-
-Flag 7
-We continued looking at additional hosts on the network for vulnerabilities and found that the particular version of apache tomcat looked to be out of date.
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/22.png)
 
 Using an open source tool called Metasploit we were able to search for the particular version of Apache Tomcat and found an exploit that would allow us to gain access to the system.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/23.png)
+
 Once access was obtained we were able to easily search the system and found flag 7.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/24.png)
 
-Flag 8
-We continued looking at ways to exploit the additional systems on the network and found a system that contained a particularly exploitable version of Apache.  With some simple searching in Metasploit we found an exploit, called “Shellshock”, that would give us access to the system.
+**Flag 8**
+:We continued looking at ways to exploit the additional systems on the network and found a system that contained a particularly exploitable version of Apache.  With some simple searching in Metasploit we found an exploit, called “Shellshock”, that would give us access to the system.
 
-
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/25.png)
 
 Upon setting the necessary options we were able to run the exploit and gain access to the system.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/26.png)
 
 While examining some of the most important files on the system we were able to find the flag contained in one of those files.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/27.png)
 
+**Flag 9**
+:With access to that system still in place we looked in the file containing user accounts and password hashes and found flag 9.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/28.png)
 
+**Flag 10**
+:Having collected a number of key pieces of information from the previous systems we continued our pursuit of access to additional systems on the network.  We discovered yet another system that was using a very vulnerable version of Apache and found an exploit using Metasploit.
 
-
-Flag 9
-With access to that system still in place we looked in the file containing user accounts and password hashes and found flag 9.
-
-
-Flag 10
-Having collected a number of key pieces of information from the previous systems we continued our pursuit of access to additional systems on the network.  We discovered yet another system that was using a very vulnerable version of Apache and found an exploit using Metasploit.
-
-
-
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/29.png)
 
 Upon setting the options for the exploit and running it we were able to establish a session and upon searching we found a compressed file containing the flag.  We used a command within our session to download the file to our system for further analysis.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/30.png)
+
 With the file on our local system we were able to extract the contents and view the flag.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/31.png)
 
+**Flag 11**
+:For one of the last systems to test we found an exploit for an older version of Drupal we found on the system.
 
-
-Flag 11
-For one of the last systems to test we found an exploit for an older version of Drupal we found on the system.
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/32.png)
 
 Upon setting the options for the exploit and running it we were able to gain access to the system.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/33.png)
 
 Once access was established we were able to run several commands to retrieve system information about the system. (This flag was not working to compete on the challenges page but this is the process we took to get the requested information.)
 
-Flag 12
-We discovered during our initial network scan that the final system had an open ssh port and was listening for connections.  With information we retrieve during our initial recon of the domain name we entered the user name, and with some simple password guessing were able to obtain access to the system.  Once access was obtained we utilized a vulnerability in the installed version of sudo to escalate our privileges to root which allowed us to view sensitive areas of the system and retrieve the flag.
- a
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/34.png)
 
+**Flag 12**
+:We discovered during our initial network scan that the final system had an open ssh port and was listening for connections.  With information we retrieve during our initial recon of the domain name we entered the user name, and with some simple password guessing were able to obtain access to the system.  Once access was obtained we utilized a vulnerability in the installed version of sudo to escalate our privileges to root which allowed us to view sensitive areas of the system and retrieve the flag.
+ 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/35.png)
 
+## **Windows Vulnerabilities**
 
+**Flag 1**
+:Upon doing additional reconnaissance we discovered a GitHub repository for Rekall and while parsing the data contained there we were able to find a user account with a hash.
 
-Windows Vulnerabilities
-
-Flag 1
-Upon doing additional reconnaissance we discovered a GitHub repository for Rekall and while parsing the data contained there we were able to find a user account with a hash.
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/36.png)
 
 After passing this hash through an open source tool called John-the-Ripper we were able to easily retrieve the password.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/37.png)
 
+**Flag 2**
+:With access to the network established we did an aggressive network scan which exposed the services running on each system.  We found a Windows 10 system that was running a webserver.
 
-
-
-Flag 2
-With access to the network established we did an aggressive network scan which exposed the services running on each system.  We found a Windows 10 system that was running a webserver.
-
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/38.png)
 
 Upon browsing to that system we found, using the username and password discovered in the previous recon, and were able to reach the site data containing the flag.
 
+![](https://github.com/dobyfreejr/Project-2/blob/ab3ca4cfd2f3365d69c32acb5220d8ac72b28f9d/img/39.png)
 
+**Flag 3**
+:When we found the internal web server we also noted that the system was running an ftp server.  When testing access to that server we found the default “anonymous” user name and password was still active and had full access to the data contained on the server.
 
-
-
-Flag 3
-When we found the internal web server we also noted that the system was running an ftp server.  When testing access to that server we found the default “anonymous” user name and password was still active and had full access to the data contained on the server.
-
+![]()
 
 Upon searching the data contained we quickly found a file that contained the flag data we needed, and after moving it to our local system were able to view the data and retrieve the flag.
 
+![]()
 
+**Flag 4**
+:From our initial scan we additionally found that the system that contained the last two flags was also hosting a mail server.  Upon doing some searching we found that the version of SLMail was exploitable due to a well known vulnerability.
 
-
-
-
-Flag 4
-From our initial scan we additionally found that the system that contained the last two flags was also hosting a mail server.  Upon doing some searching we found that the version of SLMail was exploitable due to a well known vulnerability.
-
+![]()
 
 Upon setting the options for the exploit and running it we were able to drop to a shell and found a file containing our flag which we were able to retrieve using simple windows command line tools.
 
 
-Flag 5
-Now that we had gained access to the Windows 10 system we started to do initial recon to find other ways to maintain a foothold in the network.  We started this process by creating a payload that would “call home” to our system and allow us to maintain a connection.
+**Flag 5**
+:Now that we had gained access to the Windows 10 system we started to do initial recon to find other ways to maintain a foothold in the network.  We started this process by creating a payload that would “call home” to our system and allow us to maintain a connection.
 
 
 
@@ -342,18 +348,18 @@ Once the payload was generated we uploaded it to the Windows 10 system
 In order to keep the payload up and running we needed to schedule a task to run it regularly.  Upon looking through the currently scheduled tasks we found a task named “flag 5” and found the flag under the comment.
 
 
-Flag 6
-Using a module in Metasploit called kiwi, we were able to query the system and found a list of credentials.
+**Flag 6**
+:Using a module in Metasploit called kiwi, we were able to query the system and found a list of credentials.
 
 
 Upon retrieving these credentials we pulled them to the local system and again, using John-the-Ripper, we were able to discover the user accounts password. 
 
-Flag 7
-While still working with the Windows 10 system we had previously gained access to, we continued to look at the file and folders on the system and found that there was a flag contained in the Public profile in the Documents folder and using a built-in command we were able to view the data contained within.
+**Flag 7**
+:While still working with the Windows 10 system we had previously gained access to, we continued to look at the file and folders on the system and found that there was a flag contained in the Public profile in the Documents folder and using a built-in command we were able to view the data contained within.
 
 
-Flag 8
-While doing recon on the Windows 10 system we found that there was a domain admin account cached in the system and were able to retrieve the password hash from that account.
+**Flag 8**
+:While doing recon on the Windows 10 system we found that there was a domain admin account cached in the system and were able to retrieve the password hash from that account.
 
 
 Again, using john-the-ripper, we were able to take that hash and retrieve the password for this account giving us a way to access additional systems with escalated privileges on the network.
