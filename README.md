@@ -161,12 +161,13 @@ Using this information we logged into the Administrator login and retrieved the 
 Flag 9
 We checked the robots.txt file, used for websearch details, and found that the flag had been entered into the file.  This information is public so don’t put things you want hidden there.
 
-![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/5.png)
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/6.png)
 
 Flag 10
 When discovering flag 8 we found a link to /networking.php.  On this page we found a box that used nslookup to return data about domain names and ip addresses.  Upon entering a site we discovered flag 10.
 
-![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/6.png)
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/7.png)
+
 
 Flag 6
 To discover this flag we used a similar technique to what was done in flag 5.  The difference here is the filtering which, instead of just needing .jpg somewhere in the name, needed to have .jpg at the end of the file name.  We created this payload, uploaded it and received flag 6.
