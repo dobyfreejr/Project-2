@@ -1,111 +1,35 @@
-    Cybersecurity
-Penetration Test Report
+# Cybersecurity
+ ##  Penetration Test Report
+
+
+
+
+## *Contact Information*
+
+| Contact Name | Kyle Barbre|
+| ------ | ---------- |
+| Contact Title   | Sr. Penetration Tester |
+| Contact Phone | 888.888.8888 |
+| Contact Email  | k.barbre@ctms.com |
+
+
+## *Document History Pentesting Team*
+
+
+| Author Name  | Title | 
+| ------ | ----------- | 
+| Destiny Nevarez | Sr Pentester |
+| Derrik Hoke | Sr. Pentester |
+| Tyler Jobson | Sr. Pentester |
+| Ryan Bryne  | Sr. Pentester |
+| Katie Diaz | Sr. Pentester |
 
 
 
 
 
 
-
-
-
-
-
-Rekall Corporation
-Penetration Test Report
-
-
-
-
-
-
-
-
-
-
-Confidentiality Statement
-
-This document contains confidential and privileged information from Rekall Inc. (henceforth known as Rekall). The information contained in this document is confidential and may constitute inside or non-public information under international, federal, or state laws. Unauthorized forwarding, printing, copying, distribution, or use of such information is strictly prohibited and may be unlawful. If you are not the intended recipient, be aware that any disclosure, copying, or distribution of this document or its parts is prohibited.
-
-
-
-Table of Contents
-
-Confidentiality Statement	2
-Contact Information	4
-Document History	4
-Introduction	5
-Assessment Objective	5
-Penetration Testing Methodology	6
-Reconnaissance	6
-Identification of Vulnerabilities and Services	6
-Vulnerability Exploitation	6
-Reporting	6
-Scope	7
-Executive Summary of Findings	8
-Grading Methodology	8
-Summary of Strengths	9
-Summary of Weaknesses	9
-Executive Summary Narrative	10
-Summary Vulnerability Overview	34
-Vulnerability Findings	35
-
-
-
-
-
-
-
-Contact Information
-
-Company Name
-Crisis & Threat Mitigation & Solutions Group, LLC
-CTMS Group
-Contact Name
-Ryan Byrne
-Contact Title
-Penetration Tester
-
-
-
-
-Document History Pentesting Team
-
-Team
-Date
-Author(s)
-Title
-CTMS Pentesting Team
-10/24/2022
-Tyler Jobson
-Pentester 
-CTMS Pentesting Team
-10/24/2022
-Kyle Barbre
-Pentester 
-CTMS Pentesting Team
-10/24/2022
-Destiny Nevarez
-Pentester 
-CTMS Pentesting Team
-10/24/2022
-Katie Diaz
-Pentester 
-CTMS Pentesting Team
-10/24/2022
-Derrik Hoke
-Pentester 
-CTMS Pentesting Team
-10/24/2022
-Ryan Byrne
-Pentester 
-
-
-
-
-
-
-Introduction
+# *Introduction*
 
 In accordance with Rekall policies, our organization conducts external and internal penetration tests of its networks and systems throughout the year. The purpose of this engagement was to assess the networks’ and systems’ security and identify potential security flaws by utilizing industry-accepted testing methodology and best practices.
 
@@ -117,7 +41,7 @@ Documenting and reporting on all findings.
 
 All tests took into consideration the actual business processes implemented by the systems and their potential threats; therefore, the results of this assessment reflect a realistic picture of the actual exposure levels to online hackers. This document contains the results of that assessment.
 
-Assessment Objective
+# *Assessment Objective*
 
 The primary goal of this assessment was to provide an analysis of security flaws present in Rekall’s web applications, networks, and systems. This assessment was conducted to identify exploitable vulnerabilities and provide actionable recommendations on how to remediate the vulnerabilities to provide a greater level of security for the environment.
 
@@ -125,7 +49,7 @@ We used our proven vulnerability testing methodology to assess all relevant web 
 
 Rekall has outlined the following objectives:
 
-Table 1: Defined Objectives
+**Table 1: Defined Objectives**
 
 Objective
 Find and exfiltrate any sensitive information within the domain.
@@ -136,26 +60,26 @@ Compromise several machines.
 
 
 
-Penetration Testing Methodology
+# *Penetration Testing Methodology*
 
-Reconnaissance
+### **Reconnaissance**
  
 We begin assessments by checking for any passive (open source) data that may assist the assessors with their tasks. If internal, the assessment team will perform active recon using tools such as Nmap and Bloodhound.
 
-Identification of Vulnerabilities and Services
+### *Identification of Vulnerabilities and Services*
 
 We use custom, private, and public tools such as Metasploit, hashcat, and Nmap to gain perspective of the network security from a hacker’s point of view. These methods provide Rekall with an understanding of the risks that threaten its information, and also the strengths and weaknesses of the current controls protecting those systems. The results were achieved by mapping the network architecture, identifying hosts and services, enumerating network and system-level vulnerabilities, attempting to discover unexpected hosts within the environment, and eliminating false positives that might have arisen from scanning. 
 
-Vulnerability Exploitation
+### *Vulnerability Exploitation*
 
 Our normal process is to both manually test each identified vulnerability and use automated tools to exploit these issues. Exploitation of a vulnerability is defined as any action we perform that gives us unauthorized access to the system or the sensitive data. 
 
-Reporting
+## *Reporting*
 
 Once exploitation is completed and the assessors have completed their objectives, or have done everything possible within the allotted time, the assessment team writes the report, which is the final deliverable to the customer.
 
 
-Scope
+## *Scope*
 
 Prior to any assessment activities, Rekall and the assessment team will identify targeted systems with a defined range or list of network IP addresses. The assessment team will work directly with the Rekall POC to determine which network ranges are in-scope for the scheduled assessment. 
 
@@ -163,9 +87,9 @@ It is Rekall’s responsibility to ensure that IP addresses identified as in-sco
 
 
 
-Executive Summary of Findings
+# **Executive Summary of Findings**
 
-Grading Methodology
+## **Grading Methodology**
 
 Each finding was classified according to its severity, reflecting the risk each such vulnerability may pose to the business processes implemented by the application, based on the following criteria:
 
@@ -177,31 +101,31 @@ Informational:    No threat; however, it is data that may be used in a future at
 
 As the following grid shows, each threat is assessed in terms of both its potential impact on the business and the likelihood of exploitation:
 
+![]()
 
 
-
-Summary of Strengths
+## *Summary of Strengths*
 
 While the assessment team was successful in finding several vulnerabilities, the team also recognized several strengths within Rekall’s environment. These positives highlight the effective countermeasures and defenses that successfully prevented, detected, or denied an attack technique or tactic from occurring. 
 
-An adequate SSL certificate has been set up on the web server.
-Filtering was enabled on certain entry fields on the website, maybe not preventing all exploits, but discouraging less persistent threats.
+- An adequate SSL certificate has been set up on the web server.
+- Filtering was enabled on certain entry fields on the website, maybe not preventing all exploits, but discouraging less persistent threats.
 
 
-Summary of Weaknesses
+## *Summary of Weaknesses*
 
 We successfully found several critical vulnerabilities that should be immediately addressed in order to prevent an adversary from compromising the network. These findings are not specific to a software version but are more general and systemic vulnerabilities.
 
-Passwords were stored in clear text on the website on “hidden” but not locked down pages.
-Password policies are weak and many passwords are guessable.
-Filtering across the website was weak allowing multiple forms of injection through entry fields..
-Sensitive data was accessible from within publicly accessible locations.
-Pages were not set to be static and manipulation of the URL would expose not just site data but server data as well.
-Administrative pages of the site were not password protected properly.
-Actual user accounts were used in creating the contact info for the domain leading to brute force attacks.
-Software patching on all machines wasn’t up to date and allowed for easy exploitation of the systems on the network and from the WAN.
-Ports that were not necessarily needed were left open and not fully configured to prevent intrusion.
-Default passwords for some server services were left active allowing for simple access to critical information..
+- Passwords were stored in clear text on the website on “hidden” but not locked down pages.
+- Password policies are weak and many passwords are guessable.
+- Filtering across the website was weak allowing multiple forms of injection through entry fields..
+- Sensitive data was accessible from within publicly accessible locations.
+- Pages were not set to be static and manipulation of the URL would expose not just site data but server data as well.
+- Administrative pages of the site were not password protected properly.
+- Actual user accounts were used in creating the contact info for the domain leading to brute force attacks.
+- Software patching on all machines wasn’t up to date and allowed for easy exploitation of the systems on the network and from the WAN.
+- Ports that were not necessarily needed were left open and not fully configured to prevent intrusion.
+- Default passwords for some server services were left active allowing for simple access to critical information..
 
 
 
