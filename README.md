@@ -133,37 +133,44 @@ We successfully found several critical vulnerabilities that should be immediatel
 
 # **Executive Summary**
 
-Web Vulnerabilities
+## **Web Vulnerabilities**
 
 Flag 1
 This flag was found by entering <script>alert(1)</script> in the name entry box on the welcome page. This page is vulnerable to cross site scripting allowing a user the ability to enter their own scripts or commands into the field and have them run against the server potentially allowing access to additional data or even compromising the integrity of future entries.
 
-![]()
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/1.png)
 
 Flag 3
 This flag was similar to flag 1 and we found it by entering the same <script>alert(1)</script> into the comment field.  Again leaving entry boxes with no filtering for format or keywords leaves a site susceptible to injections of this kind that can compromise not just the site but other users personal data.
 
-![]()
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/2.png)
 
 Flag 5
 To find flag 5 it was discovered that there was a filter on the entry box, located on the “Memory Planner” page, but it only looked to find the jpg extension somewhere within the name.  Modifying the payload’s extension to include jpg and an additional extension allowed us to upload a payload to the server and receive flag 5.
 
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/3.png)
 
 Flag 8
 To discover flag 8 we went to the login page and found that we could add /html to the end of the url and from there it was discovered that the administrator login was included on the page in clear text.
+
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/4.png)
 
 Using this information we logged into the Administrator login and retrieved the flag.
 
 Flag 9
 We checked the robots.txt file, used for websearch details, and found that the flag had been entered into the file.  This information is public so don’t put things you want hidden there.
 
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/5.png)
 
 Flag 10
 When discovering flag 8 we found a link to /networking.php.  On this page we found a box that used nslookup to return data about domain names and ip addresses.  Upon entering a site we discovered flag 10.
 
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/6.png)
+
 Flag 6
 To discover this flag we used a similar technique to what was done in flag 5.  The difference here is the filtering which, instead of just needing .jpg somewhere in the name, needed to have .jpg at the end of the file name.  We created this payload, uploaded it and received flag 6.
 
+![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/7.png)
 
 Flag 11
 Similar to flag 10 this flag was found using the tools found on the networking.php page but using the MX Record Checker entry box.  Entering a website url into the entry box and once the button is pressed the flag is returned.
@@ -176,21 +183,12 @@ Due to some weaknesses in the design of the webpage, which allowed us to open th
 
 
 
-
-
 Flag 7
 This flag was discovered by using SQL injection on the login page.  Entering ' OR 1 -- - into the login entry box allows us to use an “OR” statement to query the database using an always false statement, which kicks back flag 7.
 
 
 Flag 15
 To discover this flag we first started with doing some recon using the admin networking tools page in the “DNS Check” entry box which allows command entry.  We found a folder containing an old disclaimer text file.
-
-
-
-
-
-
-
 
 
 
@@ -269,13 +267,6 @@ Having collected a number of key pieces of information from the previous systems
 
 
 
-
-
-
-
-
-
-
 Upon setting the options for the exploit and running it we were able to establish a session and upon searching we found a compressed file containing the flag.  We used a command within our session to download the file to our system for further analysis.
 
 With the file on our local system we were able to extract the contents and view the flag.
@@ -299,28 +290,6 @@ We discovered during our initial network scan that the final system had an open 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Windows Vulnerabilities
 
 Flag 1
@@ -328,9 +297,6 @@ Upon doing additional reconnaissance we discovered a GitHub repository for Rekal
 
 
 After passing this hash through an open source tool called John-the-Ripper we were able to easily retrieve the password.
-
-
-
 
 
 
@@ -346,24 +312,11 @@ Upon browsing to that system we found, using the username and password discovere
 
 
 
-
-
-
-
-
-
 Flag 3
 When we found the internal web server we also noted that the system was running an ftp server.  When testing access to that server we found the default “anonymous” user name and password was still active and had full access to the data contained on the server.
 
 
 Upon searching the data contained we quickly found a file that contained the flag data we needed, and after moving it to our local system were able to view the data and retrieve the flag.
-
-
-
-
-
-
-
 
 
 
@@ -566,32 +519,6 @@ Set up two-factor authentication instead of basic authentication to prevent dict
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Vulnerability 4
 Findings
 Title
@@ -606,28 +533,6 @@ Affected Hosts
 totalrekall.xyz
 Remediation 
 The practice of securing these pages used for website administration are generally locked down behind a secure password.  Also leaving account information, even with a hashed password, anywhere is a horrible idea and should be removed.  Passwords can always be reset and any time they are recorded there is a chance of it being found by the wrong parties.  Additionally the “Admin Networking Tools”, while being convenient, are really awful to be on the server unless absolutely necessary and otherwise should be removed, especially since these tools are not needed for the functionality  of the website and can be run locally on any administrator system locally.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -670,29 +575,6 @@ Remediation
 To prevent most of these exploits a thorough audit of the software running on each system on the network should be conducted.  Starting with the list provided, as they are the most easily identifiable, verifying all software across all systems is updated to the latest stable release is imperative.
 To alleviate any issues that might come up with software incompatibility, it would also be recommended to either split services to more virtual systems or containerize those services.  This will also help with updates as you can test changes on snapshots or clones, and when going live with an update you will only have to bring down part of your system if an update requires a restart.  Having a more modular system ensures you are able to keep uptime at a maximum while doing maintenance.
 For the final SLMail exploit ensure that having POP3 enabled on the server is necessary, and make sure the software is up-to-date.  Most email clients and hardware (printers, scanners, time clocks, management software, etc) will work just as well, if not better, with IMAP or MS Exchange protocols, which is more secure and better for general user experience.  POP3 is a very insecure protocol and should be avoided.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
