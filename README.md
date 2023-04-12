@@ -135,8 +135,8 @@ We successfully found several critical vulnerabilities that should be immediatel
 
 ## **Web Vulnerabilities**
 
-Flag 1
-This flag was found by entering <script>alert(1)</script> in the name entry box on the welcome page. This page is vulnerable to cross site scripting allowing a user the ability to enter their own scripts or commands into the field and have them run against the server potentially allowing access to additional data or even compromising the integrity of future entries.
+**Flag 1**
+:This flag was found by entering <script>alert(1)</script> in the name entry box on the welcome page. This page is vulnerable to cross site scripting allowing a user the ability to enter their own scripts or commands into the field and have them run against the server potentially allowing access to additional data or even compromising the integrity of future entries.
 
 ![](https://github.com/dobyfreejr/Project-2/blob/774663e10efb290b6ac41d4f51da8f06ba106bf2/img/1.png)
 
